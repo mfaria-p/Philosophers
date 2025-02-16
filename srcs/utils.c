@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfaria-p <mfaria-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mfaria-p <mfaria-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:18:30 by mfaria-p          #+#    #+#             */
-/*   Updated: 2024/05/14 11:04:04 by mfaria-p         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:40:40 by mfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	print_state(char *str, t_philo *philo, int id)
 	pthread_mutex_lock(philo->write_lock);
 	time = ft_gettime() - philo->start_time;
 	if (!check_death(philo))
-		printf("%zu %d %s\n", time, id, str);
+		printf("At %zu ms, Philo %d %s\n", time, id, str);
 	pthread_mutex_unlock(philo->write_lock);
 }
 

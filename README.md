@@ -8,6 +8,8 @@ With this project, I needed to provide a thread-safe simulation of the problem u
 
 ## The Dining Philosophers Problem
 
+![Dining Philosophers](An_illustration_of_the_dining_philosophers_problem.png)
+
 A group of `X` philosophers sits around a circular table, with `X` forks placed between them. Each philosopher cycles between three states:
 
 1. **Thinking** - The philosopher is not interacting with the forks.
@@ -33,7 +35,7 @@ This project implements **mutex-based synchronization** to prevent such issues, 
 ## Project Structure
 
 ```
-philosophers/
+Philosophers/
 ├── inc/
 │   ├── philo.h            # Header file containing structures and function prototypes
 ├── srcs/
@@ -78,7 +80,7 @@ make re
 Run the program with the following command:
 
 ```sh
-./philo <number_of_philosophers> <time_to_die> <time_to_eat> <time_to_sleep> [number_of_times_each_philosopher_must_eat]
+./philosophers <number_of_philosophers> <time_to_die> <time_to_eat> <time_to_sleep> [number_of_times_each_philosopher_must_eat]
 ```
 
 ### Parameters:
@@ -92,7 +94,7 @@ Run the program with the following command:
 ### Example:
 
 ```sh
-./philo 5 800 200 200
+./philosophers 5 800 200 200
 ```
 
 This starts the simulation with 5 philosophers, where:
@@ -100,6 +102,11 @@ This starts the simulation with 5 philosophers, where:
 - Each has 800 milliseconds to start eating before dying.
 - Eating takes 200 milliseconds.
 - Sleeping takes 200 milliseconds.
+
+### Example Output:
+<p align="center">
+  <img src="sample1.png" alt="Sample Output">
+</p>
 
 ## Conclusion
 
