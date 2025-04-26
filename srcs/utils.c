@@ -6,7 +6,7 @@
 /*   By: mfaria-p <mfaria-p@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 15:18:30 by mfaria-p          #+#    #+#             */
-/*   Updated: 2025/02/16 17:40:40 by mfaria-p         ###   ########.fr       */
+/*   Updated: 2025/04/26 16:23:29 by mfaria-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,22 @@ void	mutex_destroy(char *str, t_program *program, pthread_mutex_t *forks)
 void	print_state(char *str, t_philo *philo, int id)
 {
 	size_t	time;
+	const char *colors[] = {
+        "\033[31m", // Red
+        "\033[32m", // Green
+        "\033[33m", // Yellow
+        "\033[34m", // Blue
+        "\033[35m", // Magenta
+        "\033[36m", // Cyan
+        "\033[37m"  // White
+    };
+    const char *reset_color = "\033[0m";
 
 	pthread_mutex_lock(philo->write_lock);
 	time = ft_gettime() - philo->start_time;
 	if (!check_death(philo))
-		printf("At %zu ms, Philo %d %s\n", time, id, str);
+	printf("%sAt %zu ms, Philo %d %s%s\n", 
+		colors[(id - 1) % 7], time, id, str, reset_color);
 	pthread_mutex_unlock(philo->write_lock);
 }
 
