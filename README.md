@@ -105,7 +105,7 @@ This starts the simulation with 5 philosophers, where:
 
 ### Example Output:
 <p align="center">
-  <img src="sample1.png" alt="Sample Output">
+  <img src="philo.png" alt="Sample Output">
 </p>
 
 ## Conclusion
